@@ -109,3 +109,8 @@ jobs:
           slot-name: 'production'
           publish-profile: ${{ secrets.WebAppPublishProfile }}
           package: .
+      
+      - name: OWASP DAST
+        uses: zaproxy/action-api-scan@v0.1.1
+        with:
+          target: ${{ steps.deploy-to-webapp.outputs.webapp-url }}/swagger/v1/swagger.json
