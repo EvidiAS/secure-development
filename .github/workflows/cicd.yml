@@ -111,7 +111,7 @@ jobs:
           package: .
       
       - name: OWASP DAST
-        uses: zaproxy/action-api-scan@v0.1.1
+        uses: zaproxy/action-api-scan@v0.2.0
         with:
           target: ${{ steps.deploy-to-webapp.outputs.webapp-url }}/swagger/v1/swagger.json
           token: ${{ secrets.GITHUB_TOKEN }}
